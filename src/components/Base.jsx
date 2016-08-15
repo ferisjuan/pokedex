@@ -3,11 +3,17 @@ var React = require('react');
 var Base = React.createClass({
   render(){
     return(
-      <div className="">
-        <h1>Header</h1>
-          {this.props.children}
-        <h1>Footer</h1>
+      <div>
+        <h1>Pokédex</h1>
+        <div style={{backgroundColor: "black"}}>
+          <h2>Name or Number</h2>
+          <div>
+            <input/>
+            <button><i></i></button>
+          </div>
+        </div>
       </div>
+      {this.props.children}
     );
   }
 });

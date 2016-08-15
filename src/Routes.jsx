@@ -16,10 +16,10 @@ var Page2 = require('./components/Page2.jsx');
 
 var Routes = (
   <Router history={appHistory}>
-   <Route path="/" component={Base}>
-     <Route path="/page1" component={Page1}/>
-     <Route path="/page2" component={Page2}/>
-   </Route>
+    <Route path="/" component={Base}>
+      <Route path="/pokedex" component={Page1}/>
+      <Route path="/pokemon" component={Page2}/>
+    </Route>
   </Router>
 );
 
