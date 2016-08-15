@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/bundle.js",
-    "css": "lessc --clean-css ./less/styles.less ./public/css/styles.css"
+    "css": "lessc --clean-css='--compatibility=ie8 --advanced' ./less/styles.less ./public/css/styles.css"
   },
   "dependencies": {
     "react": "^15.2.1",
