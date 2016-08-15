@@ -2,11 +2,22 @@
   "name": "pokedex",
   "version": "1.0.0",
   "description": "pokedex react router",
-  "main": "main.js",
+  "main": "./public/js/bundle.js",
+  "browser": {
+    "jquery": "./bower_components/jquery/dist/jquery.min.js"
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
   "scripts": {
     "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/bundle.js",
     "css": "lessc --clean-css='--compatibility=ie8 --advanced' ./less/styles.less ./public/css/styles.css"
   },
+
+
   "dependencies": {
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
@@ -15,6 +26,7 @@
   "devDependencies": {
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
+    "browserify-shim": "^3.8.12",
     "watchify": "^3.7.0"
   },
   "repository": {

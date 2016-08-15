@@ -1,5 +1,6 @@
 var React = require('react');
 var Button = require('./Button.jsx');
+var SplitDropdown = require('./SplitDropdown.jsx')
 var styles = require('../styles/styles.js')
 
 var Page1 = React.createClass({
@@ -13,6 +14,13 @@ var Page1 = React.createClass({
             text=" Surprise me!"
             style={styles.button}
             type="button"
+          />
+          <div className=""></div>
+          <SplitDropdown
+            buttonClass="btn btn-success"
+            divClass="col-sm-4"
+            style={styles.button}
+            text="Sort results by..."
           />
         </div>
       </div>

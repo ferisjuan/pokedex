@@ -1,6 +1,14 @@
 var React = require('react');
 
 var Button = React.createClass({
+  element(props){
+    if(props === null){
+      return''
+    }
+    return (
+      <i className={props}></i>
+    )
+  },
   render(){
 
     return(
@@ -8,7 +16,7 @@ var Button = React.createClass({
           type={this.props.type} className={this.props.buttonClass}
           style={this.props.style}
         >
-          <i className={this.props.icon}></i>
+          {this.element(this.props.icon)}
           {this.props.text}
         </button>
     );
