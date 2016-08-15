@@ -1,0 +1,33 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "pokedex react router",
+  "main": "main.js",
+  "scripts": {
+    "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/bundle.js"
+  },
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-router": "^2.6.0"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.11.1",
+    "babelify": "^7.3.0",
+    "watchify": "^3.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferisjuan/pokedex.git"
+  },
+  "keywords": [
+    "react",
+    "router"
+  ],
+  "author": "jcf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ferisjuan/pokedex/issues"
+  },
+  "homepage": "https://github.com/ferisjuan/pokedex#readme"
+}
