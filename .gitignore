@@ -2,3 +2,5 @@ node_modules/
 npm-debug.*
 FETCH_HEAD
 public/js/bundle.js
+public/css/styles.css
+bower_components

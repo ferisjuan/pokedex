@@ -12,8 +12,8 @@ var Base = React.createClass({
             <button><i></i></button>
           </div>
         </div>
+        {this.props.children}
       </div>
-      {this.props.children}
     );
   }
 });

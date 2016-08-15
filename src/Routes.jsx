@@ -11,8 +11,8 @@ var appHistory = useRouterHistory(CreateHashHistory)({
 });
 
 var Base = require('./components/Base.jsx');
-var Page1 = require('./components/Page1.jsx');
-var Page2 = require('./components/Page2.jsx');
+var Page1 = require('./components/Pokedex.jsx');
+var Page2 = require('./components/Pokemon.jsx');
 
 var Routes = (
   <Router history={appHistory}>
