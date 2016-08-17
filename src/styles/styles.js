@@ -3,7 +3,7 @@ module.exports = {
     marginTop: 20
   },
   button: {
-    fontSize: "1.5em",
-    height: 50
+    fontSize: "1.2em",
+    height: 40
   }
 };

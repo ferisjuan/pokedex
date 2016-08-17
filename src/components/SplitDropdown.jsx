@@ -4,10 +4,17 @@ var Button = require('./Button.jsx');
 var Dropdown = require('../../bower_components/bootstrap/js/dropdown.js')
 
 var Dropdown = React.createClass({
-  componentDidMount(){
-    // Dropdown();
-  },
   render(){
+    var dropDownList = this.props.elements.map(function (el) {
+      return(
+        <li
+          data-option-value={el.value}
+          key={el.value+el.text}
+        >
+          <a>{el.text}</a>
+        </li>
+      );
+    });
 
     return(
       <div
@@ -32,13 +39,8 @@ var Dropdown = React.createClass({
           <span className="caret"></span>
           <span className="sr-only">Toggle Dropdown</span>
         </button>
-        {/* {elements} */}
         <ul className="dropdown-menu" id="dropdown">
-          <li data-option-value="noSort"><a>Sort Results by</a></li>
-          <li><a>Another action</a></li>
-          <li><a>Something else here</a></li>
-          <li role="separator" className="divider"></li>
-          <li><a>Separated link</a></li>
+          {dropDownList}
         </ul>
       </div>
     );

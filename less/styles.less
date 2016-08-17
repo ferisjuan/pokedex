@@ -1,5 +1,30 @@
+// out: ../public/css/styles.css, sourcemap: true, compress: true
 @import "../bower_components/bootstrap/less/bootstrap.less";
 @import (less) "../bower_components/bootstrap/dist/css/bootstrap-theme.css";
+
+@blackish: #212121;
+@fire: #fd7d24;
+@grass: #9bcc50;
+@poison: #b97fc9;
+
+
+.background-color-fire{
+  background: linear-gradient(180deg, @fire 50%, @fire 50%);
+  background-color: @fire;
+  color: @blackish;
+}
+
+.background-color-grass{
+  background: linear-gradient(180deg, @grass 50%, @grass 50%);
+  background-color: @grass;
+  color: @blackish;
+}
+
+.background-color-poison{
+  background: linear-gradient(180deg, @poison 50%, @poison 50%);
+  background-color: @poison;
+  color: #fff;
+}
 
 .gray-darker{
   background-color: @gray-darker;

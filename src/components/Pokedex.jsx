@@ -5,6 +5,28 @@ var styles = require('../styles/styles.js')
 
 var Page1 = React.createClass({
   render(){
+    var dropdownElements = [
+      {
+        text: 'Sort results by...',
+        value:'noSort'
+      },
+      {
+        text: 'Lowest Number (First)',
+        value: 'lowest'
+      },
+      {
+        text: 'Highest Number (First)',
+        value: 'Highest'
+      },
+      {
+        text: 'A-Z',
+        value: 'Alphabetic'
+      },
+      {
+        text: 'Z-A',
+        value: 'Inversed-Alpha'
+      }
+  ]
     return(
       <div className="container" style={styles.container}>
         <div className="row">
@@ -19,6 +41,7 @@ var Page1 = React.createClass({
           <SplitDropdown
             buttonClass="btn btn-success"
             divClass="col-sm-4"
+            elements={dropdownElements}
             style={styles.button}
             text="Sort results by..."
           />
