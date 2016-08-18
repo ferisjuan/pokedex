@@ -1,5 +1,5 @@
 var React = require('react');
-var Button = require('./Button.jsx');
+var Button = require('../components/Button.jsx');
 
 var Base = React.createClass({
   render(){

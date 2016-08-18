@@ -1,7 +1,8 @@
 var React = require('react');
-var Button = require('./Button.jsx');
-var SplitDropdown = require('./SplitDropdown.jsx')
+var Button = require('../components/Button.jsx');
+var SplitDropdown = require('../components/SplitDropdown.jsx')
 var styles = require('../styles/styles.js')
+var Matrix = require('../components/Matrix.jsx')
 
 var Page1 = React.createClass({
   render(){
@@ -45,6 +46,9 @@ var Page1 = React.createClass({
             style={styles.button}
             text="Sort results by..."
           />
+        </div>
+        <div className="row">
+          <Matrix />
         </div>
       </div>
     );

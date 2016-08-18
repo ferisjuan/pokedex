@@ -7,7 +7,11 @@ var MatrixItem = React.createClass({
 
     return(
       <li>
-        <Image />
+        <Image
+          url={this.props.url}
+          assets={this.props.assets}
+          style={this.props.style}
+        />
         <PokemonInfo
           number=""
           name=""
