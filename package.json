@@ -10,18 +10,20 @@
     "jquery": "$"
   },
   "browserify": {
-    "transform": [ "browserify-shim" ]
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "scripts": {
     "start": "watchify src/main.jsx -v -t [babelify --presets [ react ] ] -o public/js/bundle.js",
     "css": "lessc --clean-css='--compatibility=ie8 --advanced' ./less/styles.less ./public/css/styles.css"
   },
-
-
   "dependencies": {
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
-    "react-router": "^2.6.0"
+    "react-router": "^2.6.0",
+    "reflux": "^0.4.1",
+    "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
     "babel-preset-react": "^6.11.1",
