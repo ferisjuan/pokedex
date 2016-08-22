@@ -18,15 +18,27 @@ var Matrix = React.createClass({
     Actions.getPokemon();
   },
   onChange(e, pokemonList){
-    this.setState({pokemonList: pokemonList});
+    this.setState({pokemonList: pokemonList.results});
   },
   render(){
-    console.log(this.state.pokemonList);
-
+    var pokemonList = this.state.pokemonList.map(function(item, index) {
+      return(
+        <MatrixItem
+          key={index + item}
+          url={item.url}
+          assets={"https://img.pokemondb.net/artwork/".concat(item.name).concat(".jpg")}
+          number={item.url.slice(-2).slice(0,1)}
+          name={item.name}
+          ability="fire"
+        />
+      )
+    })
+    console.log(pokemonList);
     return(
-      //body
-      <div></div>
-    )
+      <div>
+        {pokemonList}
+      </div>
+    );
   }
 });
 

@@ -13,9 +13,9 @@ var MatrixItem = React.createClass({
           style={this.props.style}
         />
         <PokemonInfo
-          number=""
-          name=""
-          abilityInfo=""
+          number={this.props.number}
+          name={this.props.name}
+          abilityInfo={this.props.ability}
         />
       </li>
     );

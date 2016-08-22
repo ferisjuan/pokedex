@@ -6,7 +6,7 @@ var Image = React.createClass({
     return(
       <figure>
         <a href={this.props.url}>
-          <img srt={this.props.assets} style={this.props.style} />
+          <img src={this.props.assets} style={this.props.style} />
         </a>
       </figure>
     );

@@ -11,7 +11,7 @@ var PokemonInfo = React.createClass({
       <div>
         <PokemonNumber number={this.props.number} />
         <PokemonName name={this.props.name} />
-        <PokemonAbilities abilityInfo={this.info} />
+        {/* <PokemonAbilities abilityInfo={this.info} /> */}
       </div>
     );
   }
