@@ -11,14 +11,14 @@ var appHistory = useRouterHistory(CreateHashHistory)({
 });
 
 var Base = require('./routes/Base.jsx');
-var Page1 = require('./routes/Pokedex.jsx');
-var Page2 = require('./routes/Pokemon.jsx');
+var Pokedex = require('./routes/Pokedex.jsx');
+var Pokemon = require('./routes/Pokemon.jsx');
 
 var Routes = (
   <Router history={appHistory}>
     <Route path="/" component={Base}>
-      <Route path="/pokedex" component={Page1}/>
-      <Route path="/pokemon" component={Page2}/>
+      <Route path="/pokedex" component={Pokedex}/>
+      <Route path="/pokemon" component={Pokemon}/>
     </Route>
   </Router>
 );
