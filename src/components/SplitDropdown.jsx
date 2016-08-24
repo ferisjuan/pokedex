@@ -5,17 +5,6 @@ var Dropdown = require('../../bower_components/bootstrap/js/dropdown.js')
 
 var Dropdown = React.createClass({
   render(){
-    var dropDownList = this.props.elements.map(function (el) {
-      return(
-        <li
-          data-option-value={el.value}
-          key={el.value+el.text}
-        >
-          <a>{el.text}</a>
-        </li>
-      );
-    });
-
     return(
       <div
         className={"btn-group ".concat(this.props.divClass)}
@@ -39,8 +28,38 @@ var Dropdown = React.createClass({
           <span className="caret"></span>
           <span className="sr-only">Toggle Dropdown</span>
         </button>
-        <ul className="dropdown-menu" id="dropdown">
-          {dropDownList}
+        <ul
+          className="dropdown-menu"
+          id="dropdown"
+          onClick={this.props.function}
+        >
+          <li>
+            <a data-option-value="noSort">
+              Sort results by...
+            </a>
+          </li>
+          <li
+
+          >
+            <a data-option-value="lowest">
+              Lowest Number (First)
+            </a>
+          </li>
+          <li>
+            <a data-option-value="highest"
+            >Highest Number (First)
+            </a>
+          </li>
+          <li>
+            <a data-option-value="a-z">
+              Alphabetic
+            </a>
+          </li>
+          <li>
+            <a data-option-value="z-a">
+              Inversed-Alpha
+            </a>
+          </li>
         </ul>
       </div>
     );

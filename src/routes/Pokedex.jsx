@@ -27,40 +27,16 @@ var Page1 = React.createClass({
     });
   },
   nextPokemon(e){
-    e.preventDefault();
-    var len = this.state.next.length;
-    Actions.getPokemon(this.state.next.slice(17,len));
+    Actions.next();
   },
   surpriseMe(e){
-    e.preventDefault();
-    var rand = Math.floor(Math.random() * 811) + 1;
-    console.log(rand);
-    var newUrl = "/api/v2/pokemon/?limit=9&offset=".concat(rand);
-    Actions.getPokemon(newUrl);
+    Actions.surprise();
+  },
+  sortMe(e){
+    e.persist();
+    Actions.sortMe(e);
   },
   render(){
-    var dropdownElements = [
-      {
-        text: 'Sort results by...',
-        value:'noSort'
-      },
-      {
-        text: 'Lowest Number (First)',
-        value: 'lowest'
-      },
-      {
-        text: 'Highest Number (First)',
-        value: 'Highest'
-      },
-      {
-        text: 'A-Z',
-        value: 'Alphabetic'
-      },
-      {
-        text: 'Z-A',
-        value: 'Inversed-Alpha'
-      }
-  ]
     return(
       <div className="container" style={styles.container}>
         <div className="row">
@@ -75,7 +51,7 @@ var Page1 = React.createClass({
           <SplitDropdown
             buttonClass="btn btn-default"
             divClass="col-sm-4"
-            elements={dropdownElements}
+            function={this.sortMe}
             style={styles.button}
             text="Sort results by..."
           />
