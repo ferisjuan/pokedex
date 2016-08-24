@@ -4,8 +4,8 @@ var Actions = require('./Actions.jsx')
 
 var PokemonStore = Reflux.createStore({
   listenables: [Actions],
-  getPokemon(){
-    HTTP.get('/pokemon/?limit=9')
+  getPokemon(url){
+    HTTP.get(url)
     .then(function (json) {
       this.pokemonList = json;
       this.fireUpdate();

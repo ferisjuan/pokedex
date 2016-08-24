@@ -13,7 +13,9 @@ var Button = React.createClass({
 
     return(
         <button
-          type={this.props.type} className={this.props.buttonClass}
+          type={this.props.type}
+          className={this.props.buttonClass}
+          onClick={this.props.function}
           style={this.props.style}
         >
           {this.element(this.props.icon)}

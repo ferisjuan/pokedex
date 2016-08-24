@@ -6,7 +6,7 @@ var MatrixItem = React.createClass({
   render(){
 
     return(
-      <li>
+      <div className="col-sm-12 col-md-6 col-lg-4">
         <Image
           url={this.props.url}
           assets={this.props.assets}
@@ -17,7 +17,7 @@ var MatrixItem = React.createClass({
           name={this.props.name}
           abilityInfo={this.props.ability}
         />
-      </li>
+      </div>
     );
   }
 });

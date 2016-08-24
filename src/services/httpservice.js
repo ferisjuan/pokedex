@@ -1,5 +1,5 @@
 var Fetch = require('whatwg-fetch');
-var baseUrl = 'http://pokeapi.co/api/v2';
+var baseUrl = 'http://pokeapi.co';
 
 var service = {
   get(url){
