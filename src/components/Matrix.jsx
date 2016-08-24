@@ -10,7 +10,7 @@ var Matrix = React.createClass({
         <MatrixItem
           key={index + item}
           url={item.url}
-          assets={"https://img.pokemondb.net/artwork/".concat(item.name).concat(".jpg")}
+          assets={item.assets}
           number={item.number}
           name={item.name}
           ability="fire"

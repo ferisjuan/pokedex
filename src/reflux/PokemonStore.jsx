@@ -10,6 +10,7 @@ var PokemonStore = Reflux.createStore({
       var len = json.results.length;
       for (var i = 0; i < len; i++) {
         json.results[i].number = +json.results[i].url.match(/\d+/g)[1];
+        json.results[i].assets = "https://img.pokemondb.net/artwork/".concat(json.results[i].name).concat(".jpg")
       }
       this.pokemonList = json;
       this.fireUpdate();
