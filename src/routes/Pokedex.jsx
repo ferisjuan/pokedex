@@ -26,11 +26,17 @@ var Page1 = React.createClass({
       next: pokemonList.next
     });
   },
-  onClick(e){
+  nextPokemon(e){
     e.preventDefault();
     var len = this.state.next.length;
-    console.log(this.state.next.slice(17,len));
     Actions.getPokemon(this.state.next.slice(17,len));
+  },
+  surpriseMe(e){
+    e.preventDefault();
+    var rand = Math.floor(Math.random() * 811) + 1;
+    console.log(rand);
+    var newUrl = "/api/v2/pokemon/?limit=9&offset=".concat(rand);
+    Actions.getPokemon(newUrl);
   },
   render(){
     var dropdownElements = [
@@ -60,6 +66,7 @@ var Page1 = React.createClass({
         <div className="row">
           <Button
             buttonClass="btn btn-primary col-sm-4"
+            function={this.surpriseMe}
             icon="glyphicon glyphicon-refresh"
             text=" Surprise me!"
             style={styles.button}
@@ -74,7 +81,7 @@ var Page1 = React.createClass({
           />
           <Button
             buttonClass="btn btn-default col-sm-4"
-            function={this.onClick}
+            function={this.nextPokemon}
             style={styles.button}
             text="Load more!"
             type="button"
