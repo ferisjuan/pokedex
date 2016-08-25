@@ -1,23 +1,17 @@
 var React = require('react');
-var Button = require('../components/Button.jsx');
+
+var SearchBar = require('../components/SearchBar.jsx')
 
 var Base = React.createClass({
   render(){
     return(
-      <div className="container">
+      <div className="container" style={{background: "#eee"}}>
         <h1 className="title">Pokédex</h1>
-        <div className="gray-darker container">
-          <h2>Name or Number</h2>
-          <form className="row">
-            <div className="form-group col-sm-4">
-              <input type="text" className="form-control" />
-            </div>
-            <Button
-              buttonClass="btn btn-warning"
-              icon="glyphicon glyphicon-search"
-              type="submit"
-            />
-          </form>
+        <div className="row gray-darker" style={{paddingLeft: 10, paddingRight: 10, margin: "0 auto"}}>
+          <div className="row" style={{marginLeft: 3}}>
+            <h2>Name or Number</h2>
+          </div>
+          <SearchBar />
         </div>
         {this.props.children}
       </div>

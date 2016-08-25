@@ -1,9 +1,14 @@
 module.exports = {
   container:{
-    marginTop: 20
+    margin: 20
   },
   button: {
-    fontSize: "1.2em",
+    fontSize: "1.4em",
+    fontWeight: "bold",
     height: 40
+  },
+  matrix: {
+    marginTop: 30,
+    marginBottom: 30
   }
 };

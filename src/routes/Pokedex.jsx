@@ -14,7 +14,8 @@ var Page1 = React.createClass({
   getInitialState(){
     return {
       pokemonList: [],
-      next: null
+      next: null,
+      dropdownButtonText: "Sort results by... "
     }
   },
   componentWillMount(){
@@ -35,38 +36,46 @@ var Page1 = React.createClass({
   sortMe(e){
     e.persist();
     Actions.sortMe(e);
+    console.log(e.target.value);
+    this.setState({dropdownButtonText: e.target.innerHTML});
   },
   render(){
     return(
-      <div className="container" style={styles.container}>
-        <div className="row">
+      <div className="row" style={{marginTop: 10}}>
+        <div className="col-sm-3 col-md-4 col-lg-4">
           <Button
-            buttonClass="btn btn-primary col-sm-4"
+            buttonClass="btn btn-primary"
             function={this.surpriseMe}
             icon="glyphicon glyphicon-refresh"
             text=" Surprise me!"
             style={styles.button}
             type="button"
           />
+        </div>
+        <div className="col-sm-3 col-md-4 col-lg-4">
           <SplitDropdown
-            buttonClass="btn btn-default"
-            divClass="col-sm-4"
+            buttonClass="btn btn-default dropdown-toggle"
             function={this.sortMe}
             style={styles.button}
-            text="Sort results by..."
+            text={this.state.dropdownButtonText}
           />
+        </div>
+        <div className="row">
+          <Matrix
+            pokemonList = {this.state.pokemonList}
+          />
+        </div>
+        <div className="row">
           <Button
-            buttonClass="btn btn-default col-sm-4"
+            buttonClass="btn btn-default "
             function={this.nextPokemon}
             style={styles.button}
             text="Load more!"
             type="button"
           />
         </div>
-        <Matrix
-          pokemonList = {this.state.pokemonList}
-        />
       </div>
+
     );
   }
 });

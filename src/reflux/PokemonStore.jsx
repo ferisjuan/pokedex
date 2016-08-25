@@ -24,7 +24,6 @@ var PokemonStore = Reflux.createStore({
   },
   sortMe(e){
     var val = e.target.getAttribute('data-option-value');
-    var list = this.pokemonList.results;
 
     // Took this function from http://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value-in-javascript
     function dynamicSort(property) {
@@ -45,13 +44,14 @@ var PokemonStore = Reflux.createStore({
         this.pokemonList.results.sort(dynamicSort("number"));
         break;
       case "highest":
-      this.pokemonList.results.sort(dynamicSort("-number"));
+        this.pokemonList.results.sort(dynamicSort("-number"));
+
         break;
       case "a-z":
         this.pokemonList.results.sort(dynamicSort("name"));
         break;
       case "z-a":
-      this.pokemonList.results.sort(dynamicSort("-name"));
+        this.pokemonList.results.sort(dynamicSort("-name"));
         break;
       default:
   }

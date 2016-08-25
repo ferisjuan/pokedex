@@ -19,7 +19,7 @@ var Matrix = React.createClass({
       )
     })
     return(
-        <div className="row text-center" style={{marginTop: 30}}>
+        <div className="text-center" style={styles.matrix}>
           {pokemonList}
         </div>
     );
