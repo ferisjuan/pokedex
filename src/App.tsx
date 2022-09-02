@@ -1,13 +1,32 @@
-import Logo from "@/assets/logo.png";
-import HelloWorld from "@/components/HelloWorld/HelloWorld";
-
-import styles from "./App.module.css";
+import {AppShell, Header, MantineProvider, Text} from "@mantine/core";
 
 export default function App() {
   return (
-    <main className={styles.main}>
-      <img className={styles.logo} alt="React logo" width="400px" src={Logo} />
-      <HelloWorld msg="Hello React + TypeScript + Vite" />
-    </main>
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{
+        colorScheme: "dark",
+      }}
+    >
+      <AppShell
+        padding="md"
+        header={
+          <Header height={60} p="xs">
+            <Text size="xl">Pokedex</Text>
+          </Header>
+        }
+        styles={(theme) => ({
+          main: {
+            backgroundColor:
+              theme.colorScheme === "dark"
+                ? theme.colors.dark[8]
+                : theme.colors.gray[0],
+          },
+        })}
+      >
+        <Text>Welcome to Pokedex!</Text>
+      </AppShell>
+    </MantineProvider>
   );
 }
