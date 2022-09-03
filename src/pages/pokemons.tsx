@@ -1,8 +1,8 @@
-import {Container, Text} from "@mantine/core";
+import {Container, Grid, Text} from "@mantine/core";
 import {useEffect, useState} from "react";
-import { AppCard } from '../components';
-import { URLS } from '../constants';
-import { Result } from '../interfaces';
+import {AppCard} from "../components";
+import {URLS} from "../constants";
+import {Result} from "../interfaces";
 import {fetcher} from "../lib";
 
 const Pokemons: React.FC = () => {
@@ -26,9 +26,15 @@ const Pokemons: React.FC = () => {
 
   return (
     <Container>
-      {/* {pokemons.map(pokemon => <AppCard />)} */}
+      <Grid>
+        {pokemons.map((pokemon) => (
+          <Grid.Col sm={6} md={3}>
+            <AppCard url={pokemon.url} />
+          </Grid.Col>
+        ))}
+      </Grid>
     </Container>
-  )
+  );
 };
 
 export default Pokemons;

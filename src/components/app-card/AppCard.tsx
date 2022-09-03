@@ -4,55 +4,48 @@ import {Pokemon} from "../../interfaces";
 import {fetcher} from "../../lib";
 
 interface AppCardProps {
-  name: string;
   url: string;
 }
 
-export const AppCard: React.FC<AppCardProps> = ({name, url}) => {
+export const AppCard: React.FC<AppCardProps> = ({url}) => {
   const [pokemon, setPokemon] = useState<Pokemon>();
 
   useEffect(() => {
     async function fetchPokemon() {
       const _pokemon = await fetcher({url});
 
-      setPokemon(_pokemon)
+      setPokemon(_pokemon);
     }
 
-    fetchPokemon()
+    fetchPokemon();
   }, []);
 
+  if (!pokemon) return null;
+
   return (
-    <Card shadow="sm" p="lg" radius="md" withBorder>
+    <Card p="lg" radius="md" withBorder shadow="sm">
       <Card.Section>
-        {/* <Image src={image.src} height={160} alt={image.alt} /> */}
+        <Image
+          alt={pokemon.name}
+          height={160}
+          width={160}
+          src={pokemon?.sprites.front_default}
+        />
       </Card.Section>
 
-      {/* <Group position="apart" mt="md" mb="xs">
-        <Text weight={500}>{title}</Text>
+      <Group position="left" mt="md" mb="xs">
+        <Text weight={500}>{pokemon.name}</Text>
 
-        {badge && (
-          <Badge color="pink" variant="light">
-            {badge}
+        {pokemon.types.map((type) => (
+          <Badge color="pink" variant="filled">
+            {type.type.name}
           </Badge>
-        )}
+        ))}
       </Group>
 
       <Text size="sm" color="dimmed">
-        {body}
+        pokemon stats, height width, attacks
       </Text>
-
-      {button?.action && button.title && (
-        <Button
-          variant="light"
-          color="blue"
-          fullWidth
-          mt="md"
-          onClick={button?.action}
-          radius="md"
-        >
-          {button?.title}
-        </Button> */}
-      {/* )} */}
     </Card>
   );
 };
