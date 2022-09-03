@@ -1,11 +1,9 @@
-const BASE_URL = "https://pokeapi.co/api/v2";
-
 interface FetcherProps {
-  endpoint: string;
+  url: string;
 }
 
-export const fetcher = async ({endpoint}: FetcherProps) => {
-  const res = await fetch(`${BASE_URL}/${endpoint}`);
+export const fetcher = async ({url}: FetcherProps) => {
+  const res = await fetch(url);
   const data = await res.json();
 
   return data;

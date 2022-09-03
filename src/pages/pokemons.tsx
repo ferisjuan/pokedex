@@ -1,28 +1,34 @@
-import {Text} from "@mantine/core";
+import {Container, Text} from "@mantine/core";
 import {useEffect, useState} from "react";
-import { fetcher } from '../lib';
+import { AppCard } from '../components';
+import { URLS } from '../constants';
+import { Result } from '../interfaces';
+import {fetcher} from "../lib";
 
 const Pokemons: React.FC = () => {
-  const [count, setCount] = useState(0)
-  const [next, setNext] = useState<string>()
-  const [previous, setPrevious] = useState<string>()
-  const [pokemons, setPokemons] = useState([]);
-  console.log('🚀🚀🚀 ~ file: pokemons.tsx ~ line 10 ~ pokemons', pokemons)
+  const [count, setCount] = useState(0);
+  const [next, setNext] = useState<string>();
+  const [previous, setPrevious] = useState<string>();
+  const [pokemons, setPokemons] = useState<Result[]>([]);
 
   useEffect(() => {
     async function fetch() {
-      const res = await fetcher({endpoint: 'pokemon'})
+      const res = await fetcher({url: `${URLS.base}/pokemon`});
 
-      setCount(res.count)
-      setNext(res.next)
-      setPrevious(res.previous)
-      setPokemons(res.results)
+      setCount(res.count);
+      setNext(res.next);
+      setPrevious(res.previous);
+      setPokemons(res.results);
     }
 
-    fetch()
-  },[])
+    fetch();
+  }, []);
 
-  return <Text size="xl">Pokemons</Text>;
+  return (
+    <Container>
+      {/* {pokemons.map(pokemon => <AppCard />)} */}
+    </Container>
+  )
 };
 
 export default Pokemons;
