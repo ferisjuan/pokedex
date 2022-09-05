@@ -8,16 +8,17 @@ interface AppBadgeProps {
 }
 
 export const PokemonType: React.FC<AppBadgeProps> = ({type}) => (
-  <Badge
-    color={PokemonTypes[type as keyof typeof POKEMON_TYPES].color}
-    leftSection={typeIcon(
-      PokemonTypes[type as keyof typeof POKEMON_TYPES].color,
-      PokemonTypes[type as keyof typeof POKEMON_TYPES].icon
-    )}
-    radius="sm"
-    size="md"
-    variant="outline"
-  >
-    {type}
-  </Badge>
+    <Badge
+      color={PokemonTypes[type as keyof typeof POKEMON_TYPES].color}
+      fullWidth
+      leftSection={typeIcon(
+        PokemonTypes[type as keyof typeof POKEMON_TYPES].color,
+        PokemonTypes[type as keyof typeof POKEMON_TYPES].icon
+      )}
+      radius="sm"
+      size="md"
+      variant="outline"
+    >
+      {type}
+    </Badge>
 );
