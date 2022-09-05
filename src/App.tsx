@@ -1,5 +1,5 @@
 import {AppShell, Header, MantineProvider, Text} from "@mantine/core";
-import Pokemons from './pages/pokemons';
+import Pokemons from "./pages/pokemons";
 
 export default function App() {
   return (
