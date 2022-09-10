@@ -1,18 +1,18 @@
 import { Grid } from '@mantine/core';
 import {Pokemon, PokemonList} from "../../interfaces";
-import { AppCard } from '../app-card';
+import { PokemonCard } from '../pokemon-card';
 
 interface PokemonsProps {
-  pokemons: PokemonList['results'];
+  pokemonList: PokemonList['results'];
 }
 
-export const PokemonsList: React.FC<PokemonsProps> = ({pokemons}) => {
+export const PokemonsList: React.FC<PokemonsProps> = ({pokemonList: pokemons}) => {
 
   return (
     <Grid>
       {pokemons.map((pokemon) => (
         <Grid.Col key={pokemon.name} sm={6} lg={3}>
-          <AppCard url={pokemon.url} />
+          <PokemonCard url={pokemon.url} />
         </Grid.Col>
       ))}
     </Grid>
