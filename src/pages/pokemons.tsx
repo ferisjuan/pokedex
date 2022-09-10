@@ -11,14 +11,6 @@ const Pokemons: React.FC = () => {
   const [previous, setPrevious] = useState<string>();
   const [pokemons, setPokemons] = useState<PokemonList['results']>([]);
 
-  const rerenderCount = useRef(0);
-  console.log(
-    "🚀🚀🚀 ~ file: pokemons.tsx ~ line 17 ~   rerenderCount.current",
-    rerenderCount.current
-  );
-
-  rerenderCount.current += 1;
-
   useEffect(() => {
     async function fetch() {
       const res = await fetcher({url: `${URLS.base}/pokemon`});
