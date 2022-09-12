@@ -1,5 +1,5 @@
 import { Grid } from '@mantine/core';
-import {Pokemon, PokemonList} from "../../interfaces";
+import { PokemonList } from "../../interfaces";
 import { PokemonCard } from '../pokemon-card';
 
 interface PokemonsProps {
