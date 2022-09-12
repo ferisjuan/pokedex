@@ -48,7 +48,6 @@ export const PokemonCard: React.FC<AppCardProps> = ({url}) => {
 
   return (
     <Card p="lg" radius="md" shadow="sm" sx={{minHeight: "340px"}} withBorder>
-      +
       <Card.Section>
         <Image
           alt={pokemon.name}
