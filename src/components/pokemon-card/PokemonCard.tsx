@@ -7,6 +7,7 @@ import {Pokemon} from "../../interfaces";
 
 // @lib
 import {fetcher, keygen} from "../../lib";
+import { PokemonStats } from '../pokemon-stats';
 
 // @types
 import {PokemonType} from "../pokemon-type";
@@ -28,22 +29,6 @@ export const PokemonCard: React.FC<AppCardProps> = ({url}) => {
     fetchPokemon();
   }, []);
 
-  const stats = pokemon?.stats;
-  const statsTHeader = useMemo(() => {
-    if (!stats) return;
-
-    return stats.map(({stat}) => stat.name);
-  }, [stats]);
-
-  const statsRow = useMemo(() => {
-    if (!stats) return;
-
-    return stats.map(({base_stat, effort}) => ({
-      base_stat,
-      effort,
-    }));
-  }, [stats]);
-
   if (!pokemon) return null;
 
   return (
@@ -62,24 +47,7 @@ export const PokemonCard: React.FC<AppCardProps> = ({url}) => {
         ))}
       </Group>
       <Group>
-        <Table>
-          <thead>
-            <tr>
-              {statsTHeader?.map((title) => (
-                <th key={title}>{title}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              {statsRow?.map((stat) => (
-                <td key={keygen(stat)}>
-                  {stat.base_stat} - {stat.effort}
-                </td>
-              ))}
-            </tr>
-          </tbody>
-        </Table>
+          <PokemonStats stats={pokemon.stats}/>
       </Group>
       <Text size="sm" color="dimmed">
         pokemon stats, height width, attacks
