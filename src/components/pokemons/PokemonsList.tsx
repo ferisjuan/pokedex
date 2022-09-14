@@ -3,11 +3,10 @@ import { PokemonList } from "../../interfaces";
 import { PokemonCard } from '../pokemon-card';
 
 interface PokemonsProps {
-  pokemonList: PokemonList['results'];
+  pokemons: PokemonList['results'];
 }
 
-export const PokemonsList: React.FC<PokemonsProps> = ({pokemonList: pokemons}) => {
-
+export const PokemonsList: React.FC<PokemonsProps> = ({pokemons}) => {
   return (
     <Grid>
       {pokemons.map((pokemon) => (

@@ -13,19 +13,19 @@ const Pokemons: React.FC = () => {
 
   useEffect(() => {
     async function fetch() {
-      const res = await fetcher({url: `${URLS.base}/pokemon`});
+      const data = await fetcher({url: `${URLS.base}/pokemon`});
 
-      setCount(res.count);
-      setNext(res.next);
-      setPrevious(res.previous);
-      setPokemonList(res.results);
+      setCount(data.count);
+      setNext(data.next);
+      setPrevious(data.previous);
+      setPokemonList(data.results);
     }
 
     fetch();
   }, []);
 
   return <Container>
-    <PokemonsList pokemonList={pokemonList}/>
+    <PokemonsList pokemons={pokemonList}/>
   </Container>;
 };
 
