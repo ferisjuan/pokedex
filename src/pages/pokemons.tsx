@@ -1,5 +1,5 @@
 import { Container } from "@mantine/core";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { PokemonsList } from '../components';
 import { URLS } from "../constants";
 import { PokemonList } from "../interfaces";
@@ -9,23 +9,23 @@ const Pokemons: React.FC = () => {
   const [count, setCount] = useState(0);
   const [next, setNext] = useState<string>();
   const [previous, setPrevious] = useState<string>();
-  const [pokemons, setPokemons] = useState<PokemonList['results']>([]);
+  const [pokemonList, setPokemonList] = useState<PokemonList['results']>([]);
 
   useEffect(() => {
     async function fetch() {
-      const res = await fetcher({url: `${URLS.base}/pokemon`});
+      const data = await fetcher({url: `${URLS.base}/pokemon`});
 
-      setCount(res.count);
-      setNext(res.next);
-      setPrevious(res.previous);
-      setPokemons(res.results);
+      setCount(data.count);
+      setNext(data.next);
+      setPrevious(data.previous);
+      setPokemonList(data.results);
     }
 
     fetch();
   }, []);
 
   return <Container>
-    <PokemonsList pokemons={pokemons}/>
+    <PokemonsList pokemons={pokemonList}/>
   </Container>;
 };
 
