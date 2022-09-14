@@ -16,7 +16,6 @@ interface AppCardProps {
 
 export const PokemonCard: React.FC<AppCardProps> = ({ url }) => {
   const { pokemon } = useFetchPokemon(url)
-  console.log('🚀🚀🚀 ~ file: PokemonCard.tsx ~ line 19 ~ pokemon', pokemon)
 
   if (!pokemon) return null;
 
