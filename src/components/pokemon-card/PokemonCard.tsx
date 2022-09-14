@@ -11,16 +11,17 @@ import { PokemonStats } from '../pokemon-stats';
 import { PokemonType } from "../pokemon-type";
 
 interface AppCardProps {
+  handleShowModal: (PokemonId: number) => void;
   url: string;
 }
 
-export const PokemonCard: React.FC<AppCardProps> = ({ url }) => {
+export const PokemonCard: React.FC<AppCardProps> = ({ handleShowModal, url }) => {
   const { pokemon } = useFetchPokemon(url)
 
   if (!pokemon) return null;
 
   return (
-    <Card p="lg" radius="md" shadow="sm" sx={{ minHeight: "340px" }} withBorder>
+    <Card onClick={() => handleShowModal(pokemon.id)} p="lg" radius="md" shadow="sm" sx={{ minHeight: "340px" }} withBorder>
       <Card.Section>
         <Image
           alt={pokemon.name}
