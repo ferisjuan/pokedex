@@ -21,7 +21,14 @@ export const PokemonCard: React.FC<AppCardProps> = ({ handleShowModal, url }) =>
   if (!pokemon) return null;
 
   return (
-    <Card onClick={() => handleShowModal(pokemon.id)} p="lg" radius="md" shadow="sm" sx={{ minHeight: "340px" }} withBorder>
+    <Card
+      onClick={() => handleShowModal(pokemon.id)}
+      p="lg"
+      radius="md"
+      shadow="sm"
+      sx={{ minHeight: "340px" }}
+      withBorder
+      >
       <Card.Section>
         <Image
           alt={pokemon.name}
@@ -32,7 +39,12 @@ export const PokemonCard: React.FC<AppCardProps> = ({ handleShowModal, url }) =>
 
       <Text weight={500}>{pokemon.name}</Text>
 
-      <Group mb="xs" mt="md" position="left" spacing="xs">
+      <Group
+        mb="xs"
+        mt="md"
+        position="left"
+        spacing="xs"
+        >
         {pokemon.types.map(({ type }) => (
           <PokemonType key={type.name} type={type.name} />
         ))}
