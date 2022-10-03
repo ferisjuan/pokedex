@@ -1,3 +1,4 @@
+import { PokemonAttack } from "@/components/pokemon-attack";
 import { Container, Modal } from "@mantine/core";
 import { useCallback, useEffect, useState } from "react";
 import { PokemonsList } from '../components';
@@ -42,6 +43,8 @@ const Pokemons: React.FC = () => {
       opened={isModalVisible}
     >
       <h1>{pokemonId}</h1>
+
+      <PokemonAttack pokemonId={pokemonId} />
     </Modal>
   </Container>;
 };
