@@ -3,7 +3,7 @@ import { Container, Modal } from "@mantine/core";
 import { useCallback, useEffect, useState } from "react";
 import { PokemonsList } from '../components';
 import { URLS } from "../constants";
-import { Result } from "../interfaces";
+import { Move, Result } from "../interfaces";
 import { fetcher } from "../lib";
 
 const Pokemons: React.FC = () => {
@@ -13,6 +13,7 @@ const Pokemons: React.FC = () => {
   const [previous, setPrevious] = useState<string>();
   const [pokemonList, setPokemonList] = useState<Result[]>([]);
   const [pokemonId, setPokemonId] = useState<number>()
+  const [pokemonMoves, setPokemonMoves] = useState<Move[]>()
 
   useEffect(() => {
     async function fetch() {
@@ -35,6 +36,7 @@ const Pokemons: React.FC = () => {
   return <Container>
     <PokemonsList
       handleShowModal={handleShowModal}
+      setPokemonMoves={setPokemonMoves}
       pokemons={pokemonList}
     />
 
@@ -44,7 +46,7 @@ const Pokemons: React.FC = () => {
     >
       <h1>{pokemonId}</h1>
 
-      <PokemonAttack pokemonId={pokemonId} />
+      <PokemonAttack pokemonMoves={pokemonMoves || []} />
     </Modal>
   </Container>;
 };

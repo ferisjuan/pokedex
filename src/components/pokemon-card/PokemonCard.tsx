@@ -9,16 +9,20 @@ import { PokemonStats } from '../pokemon-stats';
 
 // @types
 import { PokemonType } from "../pokemon-type";
+import { Move } from '../../interfaces';
 
 interface AppCardProps {
   handleShowModal: (PokemonId: number) => void;
+  setPokemonMoves: (pokemonMoves: Move[]) => void;
   url: string;
 }
 
-export const PokemonCard: React.FC<AppCardProps> = ({ handleShowModal, url }) => {
+export const PokemonCard: React.FC<AppCardProps> = ({ handleShowModal, setPokemonMoves, url }) => {
   const { pokemon } = useFetchPokemon(url)
 
   if (!pokemon) return null;
+
+  setPokemonMoves(pokemon.moves)
 
   return (
     <Card

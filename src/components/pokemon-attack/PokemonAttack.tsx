@@ -1,24 +1,18 @@
-import { fetcher } from '@/lib';
-import React, { useEffect, useState } from 'react';
-import { URLS } from "@/constants";
+import React from 'react';
+import { Move } from '../../interfaces';
 
-interface PokemonAttackProps{
-  pokemonId: number | undefined
+interface PokemonAttackProps {
+  pokemonMoves: Move[]
 }
 
-export const PokemonAttack: React.FC<PokemonAttackProps> = ({ pokemonId }) => {
-  const [pokemonMoves, setPokemonMoves] = useState([]);
-  
-  useEffect(() => {
-    async function fetch() {
-      const data = await fetcher({ url: `${URLS.base}/pokemon/${pokemonId}` });
-      setPokemonMoves(data.moves)
+export const PokemonAttack: React.FC<PokemonAttackProps> = ({ pokemonMoves }) => (
+  <div>
+    {
+      pokemonMoves.map((pokemonMove) => (
+        <h2>
+          {pokemonMove.move.name}
+        </h2>
+      ))
     }
-
-    fetch();
-  },[]);
-
-  const moves = pokemonMoves.map((pokemonMove) => <h2>{pokemonMove.move.name}</h2> )
-
-  return <div>{moves}</div>
-}
+  </div>
+)
