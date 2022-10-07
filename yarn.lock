@@ -1040,6 +1040,13 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@mantine/carousel@^5.5.4":
+  version "5.5.4"
+  resolved "https://registry.yarnpkg.com/@mantine/carousel/-/carousel-5.5.4.tgz#b6a4e61e635a0fe25102ed93c5460b4959071ae9"
+  integrity sha512-mwTp0OP+rx3XkkE974kPxRFCOsINwTk3oQC9E9cAaow5VXB2BlEeCgtreqsx9isRaIM0rNyLC6n/gGAv7UeGvw==
+  dependencies:
+    "@mantine/utils" "5.5.4"
+
 "@mantine/core@^5.2.4":
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/@mantine/core/-/core-5.4.0.tgz#f2738063c62d19b1df7285f6fb86ccee2dd2c794"
@@ -1076,6 +1083,11 @@
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-5.4.0.tgz#af60d6034833c26ac3c1e92e57c844bd468a8760"
   integrity sha512-XZE168OhQxrNz9wrFYFOdGDVxDH3wP0uZ5apBezHvf0D74qyUZjGzndkfXbvAq+/mVnMZA/fKju9ydo/IXMftg==
+
+"@mantine/utils@5.5.4":
+  version "5.5.4"
+  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-5.5.4.tgz#4cea84cfbe16ac04b9b407b4215c66d606c702f3"
+  integrity sha512-EO0iD99wfvKC09WHpCXrqb5ewTmuYf4GeNR3xOtecNaXNbFUVxmlV6wwhsJ61YScy+7bM1lplwNvkGz5CF0v7Q==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -2784,6 +2796,18 @@ electron-to-chromium@^1.4.251:
   version "1.4.258"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.258.tgz#44c5456f487be082f038282fbcfd7b06ae99720d"
   integrity sha512-vutF4q0dTUXoAFI7Vbtdwen/BJVwPgj8GRg/SElOodfH7VTX+svUe62A5BG41QRQGk5HsZPB0M++KH1lAlOt0A==
+
+embla-carousel-react@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-7.0.3.tgz#343c972a1ac5869acba3d6e9c7eeb3bd27f7e335"
+  integrity sha512-nvgAAmoFuXyCPuH2rSTnSdaTSMwFX/ilXDlfMCCDfdaj4X3u25+x8lMC1bINuk+4G2Hm6SOlrZ1eGkYdBg5HAg==
+  dependencies:
+    embla-carousel "7.0.3"
+
+embla-carousel@7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/embla-carousel/-/embla-carousel-7.0.3.tgz#7173a0f27b697a42266d34764c657eeba85bd7b5"
+  integrity sha512-Zo8E/qNb8J7n/jcfQxPrfdARlTgsMvmcXshn3J/2oxWVLwL/3N4cAhuqLQiud/oCjZzl+A8maCJDe2PDVlc/cA==
 
 emittery@^0.10.2:
   version "0.10.2"
